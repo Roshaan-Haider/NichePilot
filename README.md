@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 NichePilot
 
 **Niche-switchable AI chat assistant engine for small businesses**
@@ -151,3 +152,6 @@ See the `niches/real_estate/` folder for a complete working example.
 ## 📄 License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+=======
+# NichePilot
+>>>>>>> ca70bdee09ab836f238585c3feff11b1ad7ae88a
