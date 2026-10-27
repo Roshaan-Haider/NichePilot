@@ -1,0 +1,134 @@
+[
+  {
+    "id": "SP001",
+    "title": "Marina View Studio",
+    "area": "Dubai Marina",
+    "type": "rent",
+    "bedrooms": 0,
+    "price_aed": 55000,
+    "size_sqft": 450,
+    "status": "available",
+    "highlights": ["Sea view", "Fully furnished", "Walk to metro"]
+  },
+  {
+    "id": "SP002",
+    "title": "Marina Heights 1BR Apartment",
+    "area": "Dubai Marina",
+    "type": "rent",
+    "bedrooms": 1,
+    "price_aed": 95000,
+    "size_sqft": 750,
+    "status": "available",
+    "highlights": ["Marina view", "Modern kitchen", "Gym & pool access"]
+  },
+  {
+    "id": "SP003",
+    "title": "Marina Skyline 2BR Penthouse",
+    "area": "Dubai Marina",
+    "type": "sale",
+    "bedrooms": 2,
+    "price_aed": 3200000,
+    "size_sqft": 1400,
+    "status": "reserved",
+    "highlights": ["Panoramic sea view", "Private terrace", "Premium finishes"]
+  },
+  {
+    "id": "SP004",
+    "title": "JVC Garden Studio",
+    "area": "JVC",
+    "type": "rent",
+    "bedrooms": 0,
+    "price_aed": 40000,
+    "size_sqft": 400,
+    "status": "available",
+    "highlights": ["Garden view", "Community pool", "Pet-friendly building"]
+  },
+  {
+    "id": "SP005",
+    "title": "JVC Family 2BR Apartment",
+    "area": "JVC",
+    "type": "rent",
+    "bedrooms": 2,
+    "price_aed": 75000,
+    "size_sqft": 1100,
+    "status": "available",
+    "highlights": ["Maid's room", "Balcony", "Near schools"]
+  },
+  {
+    "id": "SP006",
+    "title": "JVC Modern 1BR Apartment",
+    "area": "JVC",
+    "type": "sale",
+    "bedrooms": 1,
+    "price_aed": 850000,
+    "size_sqft": 700,
+    "status": "available",
+    "highlights": ["Brand new", "Smart home features", "Covered parking"]
+  },
+  {
+    "id": "SP007",
+    "title": "Downtown Boulevard 2BR",
+    "area": "Downtown Dubai",
+    "type": "rent",
+    "bedrooms": 2,
+    "price_aed": 180000,
+    "size_sqft": 1250,
+    "status": "available",
+    "highlights": ["Burj Khalifa view", "Walk to Dubai Mall", "Concierge service"]
+  },
+  {
+    "id": "SP008",
+    "title": "Downtown Luxury 3BR Apartment",
+    "area": "Downtown Dubai",
+    "type": "sale",
+    "bedrooms": 3,
+    "price_aed": 5500000,
+    "size_sqft": 2100,
+    "status": "reserved",
+    "highlights": ["Fountain view", "Private elevator", "Italian marble flooring"]
+  },
+  {
+    "id": "SP009",
+    "title": "Business Bay Canal View 1BR",
+    "area": "Business Bay",
+    "type": "rent",
+    "bedrooms": 1,
+    "price_aed": 85000,
+    "size_sqft": 680,
+    "status": "available",
+    "highlights": ["Canal view", "Fully furnished", "Walk to metro"]
+  },
+  {
+    "id": "SP010",
+    "title": "Business Bay Executive 2BR",
+    "area": "Business Bay",
+    "type": "sale",
+    "bedrooms": 2,
+    "price_aed": 1800000,
+    "size_sqft": 1150,
+    "status": "available",
+    "highlights": ["High floor", "Study room", "Rooftop pool"]
+  },
+  {
+    "id": "SP011",
+    "title": "Palm Shoreline 3BR Villa",
+    "area": "Palm Jumeirah",
+    "type": "sale",
+    "bedrooms": 3,
+    "price_aed": 7500000,
+    "size_sqft": 3200,
+    "status": "reserved",
+    "highlights": ["Private beach access", "Garden", "Atlantis view"]
+  },
+  {
+    "id": "SP012",
+    "title": "Palm Crescent 4BR Penthouse",
+    "area": "Palm Jumeirah",
+    "type": "rent",
+    "bedrooms": 4,
+    "price_aed": 250000,
+    "size_sqft": 3800,
+    "status": "available",
+    "highlights": ["Full sea view", "Private pool", "Smart home system"]
+  }
+]
