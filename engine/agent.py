@@ -3,29 +3,63 @@ import json
 import logging
 from typing import Any, Generator
 
-from engine.config_loader import NicheConfig
+from engine.config_loader import NicheConfig, load_niche
 from engine.prompts import build_system_prompt
 from engine.providers import stream_chat
-from engine.session import Session
+from engine.session import Session, SessionManager
 from engine.tools import execute_tool, get_tool_schemas
 
 logger = logging.getLogger(__name__)
 
 MAX_TOOL_ROUNDS = 3
+_default_session_manager = SessionManager()
 
 
 def reply(
-    session: Session,
-    config: NicheConfig,
-    user_message: str,
+    session_or_id: Session | str,
+    arg2: NicheConfig | str,
+    arg3: str | None = None,
 ) -> Generator[dict[str, Any], None, None]:
     """Process a user message and yield response events.
+
+    Supports both signatures:
+      - reply(session, config, user_message)
+      - reply(session_id, user_message)
 
     Yields dicts:
       - ``{"type": "text", "content": str}``         — streamed text delta
       - ``{"type": "tool_status", "message": str}``   — UI status for tool execution
       - ``{"type": "error", "content": str}``         — error message
     """
+    if arg3 is None:
+        # Two-argument form: reply(session_or_id, user_message)
+        user_message = str(arg2)
+        if isinstance(session_or_id, Session):
+            session = session_or_id
+            config = load_niche(session.niche_name)
+        else:
+            session_id = str(session_or_id)
+            existing = _default_session_manager.get_session(session_id)
+            if existing is None:
+                session = Session(session_id=session_id, niche_name="real_estate")
+                _default_session_manager._sessions[session_id] = session
+            else:
+                session = existing
+            config = load_niche(session.niche_name)
+    else:
+        # Three-argument form: reply(session_or_id, config, user_message)
+        user_message = arg3
+        config = arg2 if isinstance(arg2, NicheConfig) else load_niche(str(arg2))
+        if isinstance(session_or_id, Session):
+            session = session_or_id
+        else:
+            session_id = str(session_or_id)
+            existing = _default_session_manager.get_session(session_id)
+            if existing is None:
+                session = Session(session_id=session_id, niche_name=config.name)
+                _default_session_manager._sessions[session_id] = session
+            else:
+                session = existing
     # Add user message to session
     session.add_message("user", user_message)
 

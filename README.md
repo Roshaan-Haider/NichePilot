@@ -9,7 +9,7 @@
 
 ---
 
-NichePilot is a modular, plug-and-play AI chat assistant engine designed for small businesses. Drop in a YAML config, a product catalog, and an FAQ file — and NichePilot instantly spins up a fully functional, niche-aware chatbot that can answer questions, search inventory, capture leads, and hand off to a human when needed. Built for real estate agencies, clinics, restaurants, and any business that needs a smart front-desk assistant.
+NichePilot is a modular, plug-and-play AI chat assistant engine designed for small businesses. Drop in a YAML config, a product catalog, and an FAQ file — and NichePilot instantly spins up a fully functional, niche-aware AI chat assistant that can answer questions, search inventory, capture leads, and hand off to a human when needed. Built for real estate agencies, clinics, restaurants, and any business that needs a smart front-desk assistant.
 
 ## ✨ Features
 

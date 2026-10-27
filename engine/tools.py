@@ -110,6 +110,31 @@ def _search_catalog(filters: dict[str, Any], config: NicheConfig) -> str:
     return json.dumps({"results": results, "count": len(results)})
 
 
+def mask_phone(phone: str) -> str:
+    """Partially mask a phone number for public demo display (e.g. +971 50 *** 1234)."""
+    if not phone or not isinstance(phone, str):
+        return ""
+    clean = phone.strip()
+    digits = re.sub(r"\D", "", clean)
+    if len(digits) < 7:
+        return "***"
+    last4 = digits[-4:]
+    # Check if UAE international format (+971 or 971)
+    if clean.startswith("+971") or digits.startswith("971"):
+        uae_digits = digits[3:] if digits.startswith("971") else digits
+        operator = uae_digits[:2] if len(uae_digits) >= 6 else "50"
+        return f"+971 {operator} *** {last4}"
+    elif clean.startswith("+"):
+        prefix = clean[:clean.find(" ")] if " " in clean else clean[:4]
+        return f"{prefix} *** {last4}"
+    elif clean.startswith("05"):
+        operator = clean[:3]
+        return f"{operator} *** {last4}"
+    else:
+        prefix = digits[:3]
+        return f"+{prefix} *** {last4}"
+
+
 def _validate_phone(phone: str) -> bool:
     """Loosely validate phone: digits, +, spaces, dashes; min 7 digit chars."""
     digits = re.sub(r"[^\d]", "", phone)
