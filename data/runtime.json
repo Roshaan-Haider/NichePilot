@@ -1,0 +1,8 @@
+{
+  "active_niche": "real_estate",
+  "channels": {
+    "web": true,
+    "whatsapp": false,
+    "instagram": false
+  }
+}
